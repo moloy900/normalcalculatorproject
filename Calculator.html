@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Calculator</title>
+
+
+</head>
+
+<body>
+
+    <style>
+        table {
+            border: 10px solid black;
+            border-radius: 20px;
+            background-color: rgb(170, 166, 166);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .text {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        input[type="text"] {
+            width: auto;
+            padding: 25px;
+            border-radius: 8px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            text-align: right;
+            box-sizing: border-box;
+
+        }
+
+        input[type="button"] {
+            padding: 18px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+
+        input[value="C"] {
+            padding: 25px;
+            color: rgb(0, 255, 76);
+        }
+
+        input[type="button"]:hover {
+            background-color: rgb(82, 83, 83);
+            color: rgb(0, 255, 76);
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 90px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+
+    <h1>Calculator mini Project with JavaScript<span>:)</span></h1>
+    <table id="calcu">
+        <tr>
+            <td colspan="3"><input type="text" placeholder="0" id="result"></td>
+            <td><input type="button" value="C" onclick="onClear()" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="myFunction('1')"></td>
+            <td><input type="button" value="2" onclick="myFunction('2')"></td>
+            <td><input type="button" value="3" onclick="myFunction('3')"></td>
+            <td><input type="button" value="/" onclick="myFunction('/')"></'td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="myFunction('4')"></td>
+            <td><input type="button" value="5" onclick="myFunction('5')"></td>
+            <td><input type="button" value="6" onclick="myFunction('6')"></td>
+            <td><input type="button" value="*" onclick="myFunction('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="myFunction('7')"></td>
+            <td><input type="button" value="8" onclick="myFunction('8')"></td>
+            <td><input type="button" value="9" onclick="myFunction('9')"></td>
+            <td><input type="button" value="-" onclick="myFunction('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="myFunction('0')"></td>
+            <td><input type="button" value="." onclick="myFunction('.')"></td>
+            <td><input type="button" value="=" onclick="onSolve()"></td>
+            <td><input type="button" value="+" onclick="myFunction('+')"></td>
+        </tr>
+    </table>
+    <script src="javascript.js"></script>
+
+    <script>
+        function myFunction(val) {
+            document.getElementById('result').value = document.getElementById('result').value + val
+        }
+
+        function onClear() {
+            document.getElementById('result').value = ""
+        }
+
+        function onSolve() {
+            let x = document.getElementById('result').value
+            let y = eval(x)
+            document.getElementById('result').value = y
+        }
+    </script>
+
+</body>
+
+</html>
